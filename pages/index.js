@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { memo } from "react";
 
-export default function Home() {
+const Page = () => {
   console.log(" == render == INDEX == ", Date.now());
   return (
     <div>
@@ -27,6 +28,16 @@ export default function Home() {
           </Link>
         </li>
       </ul>
+    </div>
+  );
+};
+
+const _Home = memo(Page);
+
+export default function Home() {
+  return (
+    <div>
+      <_Home />
     </div>
   );
 }

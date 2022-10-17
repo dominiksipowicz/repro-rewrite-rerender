@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { memo } from "react";
 
-export default function Home() {
+const Home = () => {
   console.log(" == render == C == ", Date.now());
   return (
     <div>
@@ -29,4 +30,6 @@ export default function Home() {
       </ul>
     </div>
   );
-}
+};
+
+export default memo(Home);
